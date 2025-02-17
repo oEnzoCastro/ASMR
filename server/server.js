@@ -6,7 +6,7 @@ const cors = require("cors");
 const app = express();
 const PORT = 8080;
 const corsOptions = {
-  origin: ["https://asmr-six.vercel.app/"],
+  origin: ["https://asmr-six.vercel.app"],
 };
 
 app.use(cors(corsOptions));
