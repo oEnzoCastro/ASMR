@@ -1,12 +1,13 @@
 const express = require("express");
 const routes = require("./postRoutes.js");
 const connect = require("./connect.js");
+require("dotenv").config({ path: "./config.env" });
 
 const cors = require("cors");
 const app = express();
 const PORT = 8080;
 const corsOptions = {
-  origin: ["http://localhost:5173"],
+  origin: [process.env.FRONTEND_URL],
 };
 
 app.use(cors(corsOptions));
