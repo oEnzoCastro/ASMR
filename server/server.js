@@ -1,13 +1,12 @@
 const express = require("express");
 const routes = require("./postRoutes.js");
 const connect = require("./connect.js");
-require("dotenv").config({ path: "./config.env" });
 
 const cors = require("cors");
 const app = express();
 const PORT = 8080;
 const corsOptions = {
-  origin: [process.env.FRONTEND_URL],
+  origin: ["https://asmr-six.vercel.app/"],
 };
 
 app.use(cors(corsOptions));
