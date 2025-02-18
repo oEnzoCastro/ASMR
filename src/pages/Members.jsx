@@ -1,20 +1,13 @@
 import { useEffect, useState } from "react";
 import { getMembers, getAlbums } from "../api/api";
 import MemberCard from "../components/MemberCard";
-import AlbumCard from "../components/AlbumCard";
 import CategoryCard from "../components/CategoryCard";
+import AddAlbumCard from "../components/AddAlbumCard";
 
 const Members = () => {
   // NOT - useState() / YES - useState([]) -> Initialize
   const [members, setMembers] = useState([]);
   const [albums, setAlbums] = useState([]);
-  const [bleeps, setBleeps] = useState([]);
-  const [classics, setClassics] = useState([]);
-  const [hipHop, setHipHop] = useState([]);
-  const [jazz, setJazz] = useState([]);
-  const [metal, setMetal] = useState([]);
-  const [muCore, setMuCore] = useState([]);
-  const [subMuCore, setSubMuCore] = useState([]);
 
   useEffect(() => {
     async function fetchAPI() {
@@ -24,15 +17,51 @@ const Members = () => {
       }
       let albums = await getAlbums();
       if (albums) {
-        setAlbums(albums);
-        console.log(albums)
-        setBleeps(albums.Bleeps);
-        setClassics(albums.Classics);
-        setHipHop(albums.HipHop);
-        setJazz(albums.Jazz);
-        setMetal(albums.Metal);
-        setMuCore(albums.MuCore);
-        setSubMuCore(albums.SubMuCore);
+        var Bleeps = [];
+        var Classics = [];
+        var HipHop = [];
+        var Jazz = [];
+        var Metal = [];
+        var MuCore = [];
+        var SubMuCore = [];
+
+        albums.map((album) => {
+          if (album.category == "Bleeps") {
+            Bleeps.push(album);
+          }
+          if (album.category == "Classics") {
+            Classics.push(album);
+          }
+          if (album.category == "HipHop") {
+            HipHop.push(album);
+          }
+          if (album.category == "Jazz") {
+            Jazz.push(album);
+          }
+          if (album.category == "Metal") {
+            Metal.push(album);
+          }
+          if (album.category == "MuCore") {
+            MuCore.push(album);
+          }
+          if (album.category == "SubMuCore") {
+            SubMuCore.push(album);
+          }
+        });
+
+        var FormatedAlbums = [];
+
+        FormatedAlbums.push(
+          Bleeps,
+          Classics,
+          HipHop,
+          Jazz,
+          Metal,
+          MuCore,
+          SubMuCore
+        );
+
+        setAlbums(FormatedAlbums);
       }
     }
 
@@ -43,19 +72,17 @@ const Members = () => {
     <div>
       <div className="membersContainer">
         {members.map((member) => {
+          
           return <MemberCard key={member._id} member={member} />;
         })}
       </div>
       <div>
-        {/* Bleeps */}
-        <CategoryCard category={bleeps} categoryName={Object.keys({bleeps})}></CategoryCard>
-        <CategoryCard category={classics} categoryName={Object.keys({classics})}></CategoryCard>
-        <CategoryCard category={hipHop} categoryName={Object.keys({hipHop})}></CategoryCard>
-        <CategoryCard category={jazz} categoryName={Object.keys({jazz})}></CategoryCard>
-        <CategoryCard category={metal} categoryName={Object.keys({metal})}></CategoryCard>
-        <CategoryCard category={muCore} categoryName={Object.keys({muCore})}></CategoryCard>
-        <CategoryCard category={subMuCore} categoryName={Object.keys({subMuCore})}></CategoryCard>
-
+        {albums.map((album) => {
+          return <div>
+            <CategoryCard key={album[0]._id} category={album} categoryName={album[0].category}/>
+            <AddAlbumCard category={album}/>
+          </div>;
+        })}
       </div>
     </div>
   );

@@ -1,13 +1,13 @@
 const AlbumCard = ({ Album }) => {
   return (
     <a
-      href={"https://open.spotify.com/search/" + Album.Album + " " + Album.Artist}
+      href={"https://open.spotify.com/search/" + Album.title + " " + Album.artist}
       className="album"
       target="_blank"
     >
-      <div className="albumArtist">{Album.Artist}</div>
-      <div className="albumArtist">{Album.Album}</div>
-      <div className="albumArtist">{Album.Cover}</div>
+      <div className="albumArtist">{Album.artist}</div>
+      <div className="albumArtist">{Album.title}</div>
+      <div className="albumArtist">{Album.cover}</div>
     </a>
   );
 };
