@@ -64,6 +64,7 @@
 .DiceRoll {
     cursor: pointer;
     background-color: black;
+    margin: 4rem;
     padding: 2rem;
     color: white;
     font-size: 3rem;
@@ -171,9 +172,16 @@
 
 /* Albums */
 
+.albumsList {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+}
+
 .albunsContainer {
     color: white;
-    background-color: black;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -181,6 +189,7 @@
     flex-wrap: wrap;
     gap: 1rem;
     padding: 1rem;
+    width: 70dvw;
 }
 
 .albunsCardContainer {
@@ -197,6 +206,7 @@
     justify-content: center;
     align-items: center;
     gap: 0.5rem;
+    width: 200px;
     color: white;
     padding: 1rem;
     background-color: rgba(255, 255, 255, 0.15);
@@ -210,6 +220,16 @@
 .albumArtist {
     color: rgba(255, 255, 255, 0.6);
     font-size: 0.8rem;
+}
+
+.albumInfo {
+    max-height: 0px;
+    overflow: hidden;
+    transition: 500ms;
+}
+
+.album:hover .albumInfo{
+    max-height: 100px;
 }
 
 /* Add Album */

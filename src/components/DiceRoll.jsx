@@ -1,28 +1,9 @@
-"use client";
-
-import { useEffect, useState } from "react";
+import React from 'react'
 
 const DiceRoll = () => {
-  function getRandomNumber() {
-    return Math.round(Math.random() * 100);
-  }
-
-  const [RandomNumber, setRandomNumber] = useState(null);
-
-  useEffect(() => {
-    setRandomNumber(getRandomNumber());
-  }, []);
-
   return (
-    <section className="DiceRollSection">
-      <button
-        className="DiceRoll"
-        onClick={() => setRandomNumber(getRandomNumber)}
-      >
-        {RandomNumber}
-      </button>
-    </section>
-  );
-};
+    <div>DiceRoll</div>
+  )
+}
 
-export default DiceRoll;
+export default DiceRoll

@@ -6,13 +6,14 @@ import NotFound from "./pages/NotFound";
 import Members from "./pages/Members";
 import Sobre from "./pages/Sobre";
 import Simulador from "./pages/Simulador";
+import Main from "./pages/Main";
 
 function App() {
   return (
     <BrowserRouter>
       <Nav></Nav>
       <Routes>
-        <Route index element={<DiceRoll></DiceRoll>}></Route>
+        <Route index element={<Main></Main>}></Route>
         <Route path="/Members" element={<Members></Members>}></Route>
         <Route path="/Sobre" element={<Sobre></Sobre>}></Route>
         <Route path="/Simulador" element={<Simulador></Simulador>}></Route>
