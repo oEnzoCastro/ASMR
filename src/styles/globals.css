@@ -88,7 +88,32 @@
     transition: 100ms;
 }
 
+
 /* Members */
+
+/* Api Offline */
+
+.apiActive {
+    display: none;
+}
+.apiInactive {
+    display: flex;
+}
+
+.apiOffline a{
+    background-color: darkred;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 4rem 40dvw;
+    font-size: 0.8rem;
+    gap: 1rem;
+    padding: 1rem;
+    flex-wrap: wrap;
+}
+
+/*  */
 
 .membersContainer {
     background-color: black;
@@ -218,4 +243,3 @@
     height: 50px;
 }
 
-/* Bleeps */

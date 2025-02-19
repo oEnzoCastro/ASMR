@@ -5,7 +5,7 @@ const AlbumCard = ({ Album }) => {
       className="album"
       target="_blank"
     >
-      <img className="albumCover" src={Album.cover} alt="" srcset="" />
+      <img className="albumCover" src={Album.cover}/>
       <div className="albumTitle">{Album.title}</div>
       <div className="albumArtist">{Album.artist}</div>
     </a>

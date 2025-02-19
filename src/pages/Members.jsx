@@ -3,19 +3,27 @@ import { getMembers, getAlbums } from "../api/api";
 import MemberCard from "../components/MemberCard";
 import CategoryCard from "../components/CategoryCard";
 import AddAlbumCard from "../components/AddAlbumCard";
+import ApiOffline from "../components/ApiOffline";
 
 const Members = () => {
   // NOT - useState() / YES - useState([]) -> Initialize
   const [members, setMembers] = useState([]);
   const [albums, setAlbums] = useState([]);
 
+  const [apiState, setApiState] = useState();
+
   useEffect(() => {
     async function fetchAPI() {
       let members = await getMembers();
       if (members) {
         setMembers(members);
+        setApiState("apiActive");
+      } else {
+        setApiState("apiInactive");
       }
+
       let albums = await getAlbums();
+
       if (albums) {
         var Bleeps = [];
         var Classics = [];
@@ -69,7 +77,10 @@ const Members = () => {
   }, []);
 
   return (
-    <div>
+    <div className="membersPage">
+      <div className={"apiOffline" + " " + apiState}>
+        <ApiOffline></ApiOffline>
+      </div>
       <div className="membersContainer">
         {members.map((member) => {
           return <MemberCard key={member._id} member={member} />;
@@ -78,16 +89,11 @@ const Members = () => {
       <AddAlbumCard />
       {albums.map((album) => {
         return (
-          <div>
-            <CategoryCard
-              key={album[0]._id}
-              category={album}
-              categoryName={album[0].category}
-            />
+          <div key={album[0]._id}>
+            <CategoryCard category={album} categoryName={album[0].category} />
           </div>
         );
       })}
-
     </div>
   );
 };
