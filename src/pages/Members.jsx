@@ -18,8 +18,6 @@ const Members = () => {
       if (members) {
         setMembers(members);
         setApiState("apiActive");
-      } else {
-        setApiState("apiInactive");
       }
 
       let albums = await getAlbums();

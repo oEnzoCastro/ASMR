@@ -32,7 +32,6 @@
 
 .TopHeader {
     padding: 0.75rem 0rem;
-    margin-bottom: 4rem;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -96,23 +95,40 @@
 .apiActive {
     display: none;
 }
-.apiInactive {
-    display: flex;
-}
+
+
 
 .apiOffline a{
-    background-color: darkred;
+    animation-name: apiOfflineEnter;
+    animation-duration: 2s;
     color: white;
+    background-color: darkred;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 4rem 40dvw;
+    margin: 0 40dvw;
     font-size: 0.8rem;
     gap: 1rem;
     padding: 1rem;
     flex-wrap: wrap;
+    overflow: hidden;
 }
+@keyframes apiOfflineEnter {
+    0% {
+        opacity: 0%;
+        color: darkred;
+    }
 
+    25% {
+        opacity: 0%;
+        color: darkred;
+    }
+
+    100% {
+        opacity: 100%;
+        color: white;
+    }
+}
 /*  */
 
 .membersContainer {
