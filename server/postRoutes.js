@@ -33,12 +33,17 @@ postRoutes.route("/albums/:category").get(async (req, res) => {
 
 postRoutes.route("/albums").post(async (req, res) => {
   let db = database.getDb();
+
+  console.log(req.body)
+
   let mongoObject = {
-    category: "MuCore",
-    artist: "Pink Floyd",
-    title: "Wish You Were Here",
-    cover: ""
+    category: req.body.category,
+    artist: req.body.artist,
+    title: req.body.title,
+    cover: req.body.cover
   };
+
+  res.removeHeader
 
   let data = await db.collection("albuns").insertOne(mongoObject);
   res.json(data);

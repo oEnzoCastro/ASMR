@@ -52,13 +52,13 @@ const Members = () => {
         var FormatedAlbums = [];
 
         FormatedAlbums.push(
-          Bleeps,
-          Classics,
-          HipHop,
-          Jazz,
-          Metal,
           MuCore,
-          SubMuCore
+          SubMuCore,
+          Classics,
+          Jazz,
+          Bleeps,
+          HipHop,
+          Metal
         );
 
         setAlbums(FormatedAlbums);
@@ -72,18 +72,22 @@ const Members = () => {
     <div>
       <div className="membersContainer">
         {members.map((member) => {
-          
           return <MemberCard key={member._id} member={member} />;
         })}
       </div>
-      <div>
-        {albums.map((album) => {
-          return <div>
-            <CategoryCard key={album[0]._id} category={album} categoryName={album[0].category}/>
-            <AddAlbumCard category={album}/>
-          </div>;
-        })}
-      </div>
+      <AddAlbumCard />
+      {albums.map((album) => {
+        return (
+          <div>
+            <CategoryCard
+              key={album[0]._id}
+              category={album}
+              categoryName={album[0].category}
+            />
+          </div>
+        );
+      })}
+
     </div>
   );
 };

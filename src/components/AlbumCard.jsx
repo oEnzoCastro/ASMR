@@ -5,9 +5,9 @@ const AlbumCard = ({ Album }) => {
       className="album"
       target="_blank"
     >
+      <img className="albumCover" src={Album.cover} alt="" srcset="" />
+      <div className="albumTitle">{Album.title}</div>
       <div className="albumArtist">{Album.artist}</div>
-      <div className="albumArtist">{Album.title}</div>
-      <div className="albumArtist">{Album.cover}</div>
     </a>
   );
 };

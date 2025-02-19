@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const URL = "http://localhost:8080"
+const URL = "https://asmr-x3i5.onrender.com"
 
 export async function getMembers() {
     const res = await axios.get(`${URL}/members`);
@@ -29,8 +29,8 @@ export async function getAlbum() {
       }
 }
 
-export async function setAlbum() {
-    const res = await axios.post(`${URL}/albums`);
+export async function createAlbum(album) {
+    const res = await axios.post(`${URL}/albums`, album);
     if(res.status === 200) {
         return res.data[0]
       } else {
