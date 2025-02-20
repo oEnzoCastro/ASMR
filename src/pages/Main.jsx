@@ -3,9 +3,9 @@ import AlbumsList from "../components/AlbumsList";
 
 const Main = () => {
   function getRandomNumber() {
-    return Math.round(Math.random() * 100);
+    return Math.round(Math.random() * 7);
   }
-  const [RandomNumber, setRandomNumber] = useState('♪');
+  const [RandomNumber, setRandomNumber] = useState("♪");
 
   console.log(RandomNumber);
 
@@ -16,11 +16,11 @@ const Main = () => {
           className="DiceRoll"
           onClick={() => setRandomNumber(getRandomNumber)}
         >
-          {RandomNumber}
+          <p className="DiceRollNumber">{RandomNumber}</p>
         </button>
       </section>
 
-    <AlbumsList></AlbumsList>
+      <AlbumsList></AlbumsList>
     </div>
   );
 };
