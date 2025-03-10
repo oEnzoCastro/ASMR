@@ -1,8 +1,18 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# ASMR
 
-Currently, two official plugins are available:
+Projeto para levar o clube A.S.M.R. para o ambiente Web
+## O que é A.S.M.R?
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+|A|S|M|R|
+|:---:|:---:|:---:|:---:|
+|Assembleia|Semanal|de Música|Radical|
+
+É um grupo que se reúne toda semana para avaliarem albuns que foram sorteados utilizando uma lista do [Mu-Core](https://i.imgur.com/zjqIAOG.jpeg)
+
+<img src="https://i.imgur.com/zjqIAOG.jpeg" width="64"/>
+
+## Authors
+
+- [@oEnzoCastro](https://www.github.com/oEnzoCastro)
+
