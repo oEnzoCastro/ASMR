@@ -10,7 +10,14 @@ Projeto para levar o clube A.S.M.R. para o ambiente Web
 
 É um grupo que se reúne toda semana para avaliarem albuns que foram sorteados utilizando uma lista do [Mu-Core](https://i.imgur.com/zjqIAOG.jpeg)
 
-<img src="https://i.imgur.com/zjqIAOG.jpeg" width="64"/>
+<img src="https://i.imgur.com/zjqIAOG.jpeg" width="128"/>
+
+## Access
+
+Para acessar o site é só entrar nesse link
+
+#### [https://asmronline.vercel.app/](https://asmronline.vercel.app/)
+
 
 ## Authors
 
