@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const URL = "https://asmr-x3i5.onrender.com";
+const URL = "http://localhost:8080";
 
 export async function getMembers() {
   try {
@@ -27,6 +27,29 @@ export async function getAlbums() {
 export async function getAlbum() {
   const res = await axios.get(`${URL}/albums`);
   if (res.status === 200) {
+    return res.data;
+  } else {
+    return;
+  }
+}
+
+export async function getCategories() {
+  const res = await axios.get(`${URL}/albums`);
+  if (res.status === 200) {
+
+    var categories = []
+
+    res.data.forEach(element => {
+
+      categories.push(element.category);
+
+    });
+
+    console.log(categories)
+
+    
+
+
     return res.data;
   } else {
     return;
