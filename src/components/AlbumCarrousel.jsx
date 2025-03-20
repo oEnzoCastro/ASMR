@@ -1,13 +1,12 @@
-import React from "react";
+import AlbumCard from "./AlbumCard";
 
-const AlbumCarrousel = () => {
-    
-
-
+const AlbumCarrousel = ({albums, ref}) => {
   return (
-    <div>
-        
-    </div>
+    <div ref={ref} className="albunsCarousel">
+      {albums.map((album) => {
+        return <AlbumCard key={album._id} Album={album}></AlbumCard>;
+      })}
+      </div>
   );
 };
 
