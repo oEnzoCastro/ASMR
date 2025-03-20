@@ -1,8 +1,9 @@
 import React from 'react'
+import AlbumCarrousel from '../components/AlbumCarrousel'
 
 const Simulador = () => {
   return (
-    <div>Simulador</div>
+    <div><AlbumCarrousel></AlbumCarrousel></div>
   )
 }
 
