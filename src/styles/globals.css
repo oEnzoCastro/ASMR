@@ -281,3 +281,32 @@
 
 /* Carrousel */
 
+.carouselContainer {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.carouselSlider {
+    display: flex;
+    width: 80%;
+    overflow: hidden;
+}
+
+.carouselSlider img {
+    width: 20%;
+    object-fit: contain;
+}
+
+.carouselPointer {
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 50px solid goldenrod;
+    width: 20px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    margin-bottom: -30px;
+    align-self: flex-end;
+    position: absolute;
+}

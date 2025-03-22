@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const URL = "http://localhost:8080";
+const URL = "https://asmr-x3i5.onrender.com";
 
 export async function getMembers() {
   try {
