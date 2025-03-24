@@ -24,7 +24,7 @@ const AddAlbumCard = () => {
     setCover(newValue);
   };
 
-  const setAlbum = (event) => {
+  const setAlbum = () => {
 
     let data = {
       category: category,
