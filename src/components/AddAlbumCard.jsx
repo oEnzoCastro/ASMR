@@ -33,10 +33,7 @@ const AddAlbumCard = () => {
       cover: cover,
     };
     
-
     createAlbum(data);
-
-    window.location.reload()
 
   };
 

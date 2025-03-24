@@ -52,9 +52,10 @@ export async function getCategories() {
 
 export async function createAlbum(album) {
   const res = await axios.post(`${URL}/albums`, album);
+  console.log(res.status)
   if (res.status === 200) {
-    return res.data[0];
+    return true;
   } else {
-    return;
+    return false;
   }
 }
