@@ -33,7 +33,9 @@ const AddAlbumCard = () => {
       cover: cover,
     };
     
-    createAlbum(data);
+
+    var response = createAlbum(data);
+    console.log(response)
 
   };
 
