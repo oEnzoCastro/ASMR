@@ -11,7 +11,7 @@ export async function getMembers() {
       return;
     }
   } catch (error) {
-    return null
+    return null;
   }
 }
 
@@ -36,19 +36,13 @@ export async function getAlbum() {
 export async function getCategories() {
   const res = await axios.get(`${URL}/albums`);
   if (res.status === 200) {
+    var categories = [];
 
-    var categories = []
-
-    res.data.forEach(element => {
-
+    res.data.forEach((element) => {
       categories.push(element.category);
-
     });
 
-    console.log(categories)
-
-    
-
+    console.log(categories);
 
     return res.data;
   } else {
