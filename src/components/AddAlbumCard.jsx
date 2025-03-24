@@ -34,9 +34,9 @@ const AddAlbumCard = () => {
     };
     
 
-    createAlbum(data);
-
-    window.location.reload()
+    var response = createAlbum(data);
+    console.log(response)
+    // window.location.reload()
 
   };
 
