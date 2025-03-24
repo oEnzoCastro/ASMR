@@ -36,7 +36,6 @@ const AddAlbumCard = () => {
 
     var response = createAlbum(data);
     console.log(response)
-    // window.location.reload()
 
   };
 
