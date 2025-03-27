@@ -1,36 +1,11 @@
-import { useEffect, useState } from "react";
 import AlbumsList from "../components/AlbumsList";
-import { getCategories } from "../api/api";
+import AlbumCarousel from "../components/AlbumCarousel";
 
 const Main = () => {
 
-  useEffect(() => {
-      async function fetchAPI() {
-        let albums = await getCategories();
-
-        
-      }
-
-      fetchAPI();
-}, [])
-
-  function getRandomNumber() {
-    return Math.round(Math.random() * 7);
-  }
-  const [RandomNumber, setRandomNumber] = useState("♪");
-
-  console.log(RandomNumber);
-
   return (
     <div>
-      <section className="DiceRollSection">
-        <button
-          className="DiceRoll"
-          onClick={() => setRandomNumber(getRandomNumber)}
-        >
-          <p className="DiceRollNumber">{RandomNumber}</p>
-        </button>
-      </section>
+      <AlbumCarousel></AlbumCarousel>
 
       <AlbumsList></AlbumsList>
     </div>
