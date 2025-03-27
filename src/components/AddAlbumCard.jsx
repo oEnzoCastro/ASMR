@@ -24,7 +24,7 @@ const AddAlbumCard = () => {
     setCover(newValue);
   };
 
-  const setAlbum = (event) => {
+  const setAlbum = async () => {
 
     let data = {
       category: category,
@@ -33,10 +33,8 @@ const AddAlbumCard = () => {
       cover: cover,
     };
     
-
-    createAlbum(data);
-
-    window.location.reload()
+    var response = await createAlbum(data);
+    await console.log(response)
 
   };
 
