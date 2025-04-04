@@ -48,19 +48,16 @@ const AlbumCarousel = () => {
   ];
 
   const [albums, setAlbums] = useState([]);
+  const [albumsList, setAlbumsList] = useState([]);
 
   useEffect(() => {
     async function fetchAPI() {
       let albums = await getAlbums();
 
-      // Suffle 5 times 'cause i'm a little bitch
-      shuffleArray(albums);
-      shuffleArray(albums);
-      shuffleArray(albums);
-      shuffleArray(albums);
+      setAlbums(albums);
       shuffleArray(albums);
 
-      setAlbums(fakeAlbums.concat(albums));
+      setAlbumsList(albums);
     }
     fetchAPI();
   }, []);
@@ -74,41 +71,43 @@ const AlbumCarousel = () => {
       array[i] = array[j];
       array[j] = temp;
     }
+
+    return array;
   }
 
   // Scroll
 
   const refDiv = useRef(null);
-  const [state, setState] = useState("♪");
-  const [hasScrolled, setHasScrolled] = useState(false);
 
-  const scrollTo = () => {
-    console.log(hasScrolled)
-    if (hasScrolled == true) {
-      window.location.reload();
-    }
-    setHasScrolled(true)
-    setState("↩");
+  const scrollTo = async () => {
 
-    console.log(albums[albums.length - 3]);
-    if (refDiv.current) {
-      refDiv.current.scrollTo({
-        left: 90000000,
-        behavior: "smooth",
-      });
-    }
+    shuffleArray(albumsList);
+    setAlbumsList(albumsList.concat(albums));
+
+    console.log(albums);
+    console.log(albumsList);
+
+    console.log(albumsList[albumsList.length - 3]);
+    await refDiv.current.scrollTo({
+      left: albumsList.length*200,
+      behavior: "smooth",
+    });
   };
+
+  var key = 0;
 
   return (
     <div className="carouselContainer">
       <div ref={refDiv} className="carouselSlider">
-        {albums.map((album) => {
-          return <img key={album._id} src={album.cover} />;
+        {albumsList.map((album) => {
+          key++;
+
+          return <img key={key} src={album.cover} />;
         })}
         <div className="carouselPointer"></div>
       </div>
       <button className="DiceRoll" onClick={scrollTo}>
-        <p className="DiceRollNumber">{state}</p>
+        <p className="DiceRollNumber">♪</p>
       </button>
     </div>
   );
