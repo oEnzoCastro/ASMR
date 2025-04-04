@@ -250,20 +250,29 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    padding: 20px 5%;
+    padding: 5rem 5%;
 }
 
 .carouselSlider {
-    border: 2px solid black;
     border-radius: 2rem;
     display: flex;
     overflow: hidden;
+    width: calc(200px * 5);
+    height: 200px;
 }
 
 .carouselSlider img {
-    width: 20%;
-    max-height: 100%;
-    object-fit: fill;
+    object-fit: scale-down;
+}
+
+@media (max-width: 1024px) {
+    .carouselContainer {
+        overflow: hidden;
+    }
+    .carouselSlider img{
+        width: 20%;
+        height: auto;
+    }
 }
 
 .carouselPointer {

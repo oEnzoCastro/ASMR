@@ -9,14 +9,11 @@ const Members = () => {
   // NOT - useState() / YES - useState([]) -> Initialize
   const [members, setMembers] = useState([]);
 
-  const [apiState, setApiState] = useState();
-
   useEffect(() => {
     async function fetchAPI() {
       let members = await getMembers();
       if (members) {
         setMembers(members);
-        setApiState("apiActive");
       }
     }
 
@@ -25,9 +22,7 @@ const Members = () => {
 
   return (
     <div className="membersPage">
-      <div className={"apiOffline" + " " + apiState}>
-        <ApiOffline></ApiOffline>
-      </div>
+      <ApiOffline></ApiOffline>
       <div className="membersContainer">
         {members.map((member) => {
           return <MemberCard key={member._id} member={member} />;

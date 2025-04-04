@@ -2,43 +2,6 @@ import { useEffect, useRef, useState } from "react";
 import { getAlbums } from "../api/api";
 
 const AlbumCarousel = () => {
-  const fakeAlbums = [
-    {
-      _id: "0",
-      category: "SubMuCore",
-      artist: "Weezer",
-      title: "Pinkertown",
-      cover: "https://i.scdn.co/image/ab67616d0000b273f4f9accdc0fb8ddee29e32b7",
-    },
-    {
-      _id: "1",
-      category: "SubMuCore",
-      artist: "Radiohead",
-      title: "OK Computer",
-      cover: "https://i.scdn.co/image/ab67616d0000b273c8b444df094279e70d0ed856",
-    },
-    {
-      _id: "2",
-      category: "MuCore",
-      artist: "King Crimson",
-      title: "In the Court of the Crimson King",
-      cover: "https://i.scdn.co/image/ab67616d0000b273da7b326bd7ffa7b6b95b0660",
-    },
-    {
-      _id: "3",
-      category: "MuCore",
-      artist: "Slint",
-      title: "Spiderland",
-      cover: "https://i.scdn.co/image/ab67616d0000b273ca727fc0809fb501506ce413",
-    },
-    {
-      _id: "4",
-      category: "SubMuCore",
-      artist: "Godspeed You! Black Emperor",
-      title: "Lift Your Skinny Fists Like Antennas to Heaven",
-      cover: "https://i.scdn.co/image/ab67616d0000b2730791c8a2dc44008c52b4883a",
-    }
-  ];
 
   const [albums, setAlbums] = useState([]);
   const [albumsList, setAlbumsList] = useState([]);
@@ -50,7 +13,7 @@ const AlbumCarousel = () => {
       shuffleArray(albums);
 
       setAlbums(albums);
-      setAlbumsList(fakeAlbums.concat(albums));
+      setAlbumsList(albums.concat(albums));
     }
     fetchAPI();
   }, []);
