@@ -37,14 +37,7 @@ const AlbumCarousel = () => {
       artist: "Godspeed You! Black Emperor",
       title: "Lift Your Skinny Fists Like Antennas to Heaven",
       cover: "https://i.scdn.co/image/ab67616d0000b2730791c8a2dc44008c52b4883a",
-    },
-    {
-      _id: "5",
-      category: "SubMuCore",
-      artist: "Kanye West",
-      title: "My Beautiful Dark Twisted Fantasy",
-      cover: "https://i.scdn.co/image/ab67616d0000b273d9194aa18fa4c9362b47464f",
-    },
+    }
   ];
 
   const [albums, setAlbums] = useState([]);
@@ -54,10 +47,10 @@ const AlbumCarousel = () => {
     async function fetchAPI() {
       let albums = await getAlbums();
 
-      setAlbums(albums);
       shuffleArray(albums);
 
-      setAlbumsList(albums);
+      setAlbums(albums);
+      setAlbumsList(fakeAlbums.concat(albums));
     }
     fetchAPI();
   }, []);
@@ -71,7 +64,6 @@ const AlbumCarousel = () => {
       array[i] = array[j];
       array[j] = temp;
     }
-
     return array;
   }
 
@@ -80,18 +72,20 @@ const AlbumCarousel = () => {
   const refDiv = useRef(null);
 
   const scrollTo = async () => {
-
-    shuffleArray(albumsList);
-    setAlbumsList(albumsList.concat(albums));
-
     console.log(albums);
     console.log(albumsList);
 
+    shuffleArray(albums);
+    setAlbumsList(albumsList.concat(albums));
+
     console.log(albumsList[albumsList.length - 3]);
     await refDiv.current.scrollTo({
-      left: albumsList.length*200,
+      left: albumsList.length * 1000,
       behavior: "smooth",
     });
+
+    shuffleArray(albums);
+    setAlbumsList(albumsList.concat(albums));
   };
 
   var key = 0;

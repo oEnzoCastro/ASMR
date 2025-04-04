@@ -53,41 +53,6 @@
     color: rgba(255, 255, 255, 0.6) !important; /* !important to override (.TopHeader a) */
 }
 
-/* Dice Roll */
-
-.DiceRollSection {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.DiceRoll {
-    cursor: pointer;
-    background-color: black;
-    margin: 4rem;
-    padding: 2rem;
-    color: white;
-    font-size: 3rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 6rem;
-    height: 6rem;
-    border: none;
-    transition: 200ms;
-    border-radius: 1rem;
-}
-.DiceRoll:hover{
-    width: 6.5rem;
-    height: 6.5rem;
-}
-.DiceRoll:active{
-    transform: rotate(45deg);
-    border-radius: 50%;
-    color: transparent;
-    transition: 100ms;
-}
-
 
 /* Members */
 
@@ -285,28 +250,65 @@
     display: flex;
     align-items: center;
     flex-direction: column;
+    padding: 20px 5%;
 }
 
 .carouselSlider {
+    border: 2px solid black;
+    border-radius: 2rem;
     display: flex;
-    width: 80%;
     overflow: hidden;
 }
 
 .carouselSlider img {
     width: 20%;
-    object-fit: contain;
+    max-height: 100%;
+    object-fit: fill;
 }
 
 .carouselPointer {
-    border-left: 20px solid transparent;
-    border-right: 20px solid transparent;
-    border-bottom: 50px solid goldenrod;
-    width: 20px;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 30px solid goldenrod;
+    width: 0;
     left: 0;
     right: 0;
     margin: 0 auto;
-    margin-bottom: -30px;
+    margin-bottom: -35px;
     align-self: flex-end;
     position: absolute;
+}
+
+/* Dice Roll */
+
+.DiceRollSection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.DiceRoll {
+    cursor: pointer;
+    background-color: black;
+    margin-top: 3rem;
+    color: white;
+    font-size: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 6rem;
+    height: 6rem;
+    border: none;
+    transition: 200ms;
+    border-radius: 1rem;
+}
+.DiceRoll:hover{
+    width: 6.5rem;
+    height: 6.5rem;
+}
+.DiceRoll:active{
+    transform: rotate(45deg);
+    border-radius: 50%;
+    color: transparent;
+    transition: 100ms;
 }
