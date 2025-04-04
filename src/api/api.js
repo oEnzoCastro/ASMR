@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const URL = "https://asmr-x3i5.onrender.com";
+const URL = import.meta.env.VITE_BACKEND_URL;
 
 export async function getMembers() {
   try {
