@@ -56,6 +56,8 @@
 
 /* Members */
 
+
+
 /* Api Offline */
 
 .apiActive {
@@ -107,6 +109,14 @@
     gap: 1rem;
     padding: 1rem;
     flex-wrap: wrap;
+}
+
+.membersContainer:empty {
+    height: 200px;
+    animation-name: loading;
+    animation-duration: 1000ms;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
 }
 
 .member {
@@ -260,6 +270,23 @@
     overflow: hidden;
     width: calc(150px * 5);
     height: 150px;
+}
+
+.carouselSlider:has(.carouselPointer:only-child) {
+    animation-name: loading;
+    animation-duration: 1000ms;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+
+@keyframes loading {
+    0% {
+        background-color: black;
+    } 
+    100%{
+        background-color: rgba(0, 0, 0, 0.85);
+    }
 }
 
 .carouselSlider img {

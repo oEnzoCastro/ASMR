@@ -60,7 +60,7 @@ const AlbumCarousel = () => {
       <div>
         {pickedAlbum}
       </div>
-      <div ref={refDiv} className="carouselSlider">
+      <div ref={refDiv} className={"carouselSlider"}>
         {albumsList.map((album) => {
           key++;
 
