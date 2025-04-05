@@ -5,6 +5,7 @@ const AlbumCarousel = () => {
 
   const [albums, setAlbums] = useState([]);
   const [albumsList, setAlbumsList] = useState([]);
+  const [pickedAlbum, setPickedAlbum] = useState()
 
   useEffect(() => {
     async function fetchAPI() {
@@ -40,8 +41,9 @@ const AlbumCarousel = () => {
 
     shuffleArray(albums);
     setAlbumsList(albumsList.concat(albums));
-
-    console.log(albumsList[albumsList.length - 3]);
+    setPickedAlbum(albumsList[albumsList.length - 3].title)
+    console.log(albumsList[albumsList.length - 3])
+    
     await refDiv.current.scrollTo({
       left: albumsList.length * 1000,
       behavior: "smooth",
@@ -55,6 +57,9 @@ const AlbumCarousel = () => {
 
   return (
     <div className="carouselContainer">
+      <div>
+        {pickedAlbum}
+      </div>
       <div ref={refDiv} className="carouselSlider">
         {albumsList.map((album) => {
           key++;

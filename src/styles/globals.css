@@ -254,11 +254,12 @@
 }
 
 .carouselSlider {
+    border: 2px solid black;
     border-radius: 2rem;
     display: flex;
     overflow: hidden;
-    width: calc(200px * 5);
-    height: 200px;
+    width: calc(150px * 5);
+    height: 150px;
 }
 
 .carouselSlider img {
@@ -269,9 +270,9 @@
     .carouselContainer {
         overflow: hidden;
     }
-    .carouselSlider img{
-        width: 20%;
-        height: auto;
+    .carouselSlider {
+        width: calc(100px * 5);
+        height: 100px;
     }
 }
 
@@ -299,7 +300,7 @@
 .DiceRoll {
     cursor: pointer;
     background-color: black;
-    margin-top: 3rem;
+    margin-top: 5rem;
     color: white;
     font-size: 3rem;
     display: flex;
