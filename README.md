@@ -23,3 +23,5 @@ Para acessar o site é só entrar nesse link
 
 - [@oEnzoCastro](https://www.github.com/oEnzoCastro)
 
+## Version:
+- 1.0.0
